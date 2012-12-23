@@ -1,0 +1,74 @@
+local run = true
+local coal = 1
+local saplings = 2
+local bonemeal = 3
+
+local posx =0
+local posy =0
+
+function refuel()
+  if turtle.getFuelLevel() < 20 then
+		if turtle.getItemCount(coal) <= 1 then
+			return false
+		else
+			turtle.select(coal)
+			turtle.refuel(1)
+		end
+	end
+
+	return true
+end
+
+----------------
+
+while run do
+
+	if not refuel() then
+		run = false
+	end
+
+	------------------
+
+
+	turtle.forward()
+  posx = poxx + 1
+  if(posx>10)
+for i=10,1,-1 do
+  turtle.back()
+end
+  turtle.turnRight()
+  turtle.forward()
+  turtle.turnLeft()
+
+    posx = 1
+
+    poxy posy+1
+    if(posy>10)
+      run=false
+    end
+  end
+
+
+for i=10,1,-1 do
+  turtle.up()
+  if(turtle.detectUp())
+    break:
+  end
+end
+
+	while turtle.detectUp() do
+		turtle.digUp()
+		turtle.up()
+	end
+
+	while not turtle.detectDown() do
+		turtle.down()
+	end
+
+	------------------
+
+	if not refuel() then
+		run = false
+	end
+
+end
